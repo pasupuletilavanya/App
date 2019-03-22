@@ -1,0 +1,28 @@
+<div class="my-4 container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2>Login Page</h2>
+      <div class="card">
+        <div class="card-body bg-light">
+          <form #myForm='ngForm'>
+            <div class="form-group">
+              <label>Username:</label>
+              <input type="text" #username='ngModel' [class.is-invalid]="username.touched && username.invalid" class="form-control is-invalid"
+              name="username" [(ngModel)]="user.username" required>
+              <div *ngIf="username.touched && username.invalid">
+                  <small class="text-danger">*Username is required</small></div>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" #pswd='ngModel' [class.is-invalid]="pswd.touched && pswd.invalid" class="form-control is-invalid"
+                name="pswd" [(ngModel)]="user.pswd" required>
+                <div *ngIf="pswd.touched && pswd.invalid">
+                    <small class="text-danger">*Password is required</small></div>
+              </div>
+              <input type="Submit" class="bg-primary" (click)="loginuser()">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
